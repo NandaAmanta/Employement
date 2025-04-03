@@ -1,4 +1,4 @@
-package com.example.employement.infrastructure.persistence;
+package com.example.employement.infrastructure.persistence.repository;
 
 import com.example.employement.domain.model.Employee;
 import com.example.employement.domain.repository.IEmployeeRepository;

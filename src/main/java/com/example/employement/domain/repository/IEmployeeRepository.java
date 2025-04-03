@@ -8,8 +8,6 @@ public interface IEmployeeRepository {
 
     Optional<Employee> findById(Long id);
 
-    Optional<Employee> findByEmployeeId(String employeeId);
-
     Employee save(Employee employee);
 
 }

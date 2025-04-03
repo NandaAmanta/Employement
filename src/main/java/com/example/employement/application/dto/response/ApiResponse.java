@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class ApiResponse {
     private boolean success;
     private String status;
     private Object data;
-    private List<String> errors;
+    private Map<String, List<String>> errors;
 
 
     public static ApiResponse success(Object data) {
@@ -45,7 +46,7 @@ public class ApiResponse {
         return apiResponse;
     }
 
-    public static  ApiResponse error(String message) {
+    public static ApiResponse error(String message) {
         ApiResponse apiResponse = new ApiResponse();
         apiResponse.setSuccess(false);
         apiResponse.setMessage(message);
@@ -61,7 +62,7 @@ public class ApiResponse {
         return apiResponse;
     }
 
-    public static ApiResponse error(String message, String status, List<String> errors) {
+    public static ApiResponse error(String message, String status, Map<String, List<String>>  errors) {
         ApiResponse apiResponse = new ApiResponse();
         apiResponse.setSuccess(false);
         apiResponse.setMessage(message);
@@ -70,7 +71,7 @@ public class ApiResponse {
         return apiResponse;
     }
 
-    public static ApiResponse error(String message, List<String> errors) {
+    public static ApiResponse error(String message, Map<String, List<String>>  errors) {
         ApiResponse apiResponse = new ApiResponse();
         apiResponse.setSuccess(false);
         apiResponse.setMessage(message);
