@@ -7,4 +7,6 @@ public interface ICompanyRepository {
     Optional<Company> findById(Long id);
 
     Company save(Company company);
+
+    boolean deleteById(Long id);
 }

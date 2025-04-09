@@ -1,4 +1,4 @@
-package com.example.employement.presentation.controller.v1;
+package com.example.employement.presentation.controller.v1.user;
 
 import com.example.employement.application.dto.request.UserLoginRequest;
 import com.example.employement.application.dto.request.UserRegistrationRequest;
@@ -7,7 +7,6 @@ import com.example.employement.application.service.AuthService;
 import com.example.employement.common.constant.RouteModuleV1Constant;
 import jakarta.validation.Valid;
 import org.apache.coyote.BadRequestException;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

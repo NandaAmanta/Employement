@@ -19,6 +19,7 @@ public class UserResponse {
 
     @JsonProperty("phone_number")
     private String phoneNumber;
+
     public static UserResponse from(User user) {
         UserResponse userResponse = new UserResponse();
         userResponse.setId(user.getId());

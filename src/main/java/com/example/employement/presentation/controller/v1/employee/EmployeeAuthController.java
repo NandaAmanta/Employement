@@ -1,4 +1,4 @@
-package com.example.employement.presentation.controller.v1;
+package com.example.employement.presentation.controller.v1.employee;
 
 import com.example.employement.application.dto.request.EmployeeLoginRequest;
 import com.example.employement.application.dto.response.ApiResponse;
