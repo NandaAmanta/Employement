@@ -6,8 +6,11 @@ import com.example.employement.application.service.user.IUserCompanyService;
 import com.example.employement.common.constant.RouteModuleV1Constant;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping(RouteModuleV1Constant.USER_COMPANY)
@@ -15,6 +18,11 @@ public class CompanyController {
 
     @Autowired
     private IUserCompanyService companyService;
+
+    @GetMapping()
+    public ResponseEntity<ApiResponse> pagination(@PageableDefault(size = 10, sort = "created_at") Pageable pageable) {
+        return ResponseEntity.ok(ApiResponse.success("Get company list successfully", companyService.pagination(pageable)));
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse> getDetail(@PathVariable Long id) {

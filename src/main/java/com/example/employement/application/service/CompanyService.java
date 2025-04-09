@@ -6,6 +6,8 @@ import com.example.employement.application.service.employee.IEmployeeCompanyServ
 import com.example.employement.application.service.user.IUserCompanyService;
 import com.example.employement.domain.repository.ICompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public class CompanyService implements IUserCompanyService, IEmployeeCompanyService {
 
@@ -30,5 +32,10 @@ public class CompanyService implements IUserCompanyService, IEmployeeCompanyServ
     @Override
     public boolean delete(Long id) {
         return companyRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<CompanyResponse> pagination(Pageable pageable) {
+        return companyRepository.pagination(pageable).map(CompanyResponse::from);
     }
 }
